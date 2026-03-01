@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class ArbolDeBusqueda {
 
-    private Nodo raiz;
+    private final Nodo raiz;
 
     public ArbolDeBusqueda(Nodo raiz) {
         this.raiz = raiz;
