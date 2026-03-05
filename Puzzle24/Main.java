@@ -18,7 +18,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        String inicial = "1,2,0,3,5,6,7,8,4,9,11,12,14,15,10,16,17,13,18,19,21,22,23,24,20";
+        String inicial = "2,1,3,4,5,6,7,8,10,15,11,12,9,14,20,16,17,13,19,24,21,22,18,23,0";
         String objetivo = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,0";
 
         List<Resultado> comparativa = new ArrayList<>();
@@ -67,6 +67,7 @@ public class Main {
         }
         return null;
     }
+
     private static List<String> reconstruirCamino(Nodo nodo) {
         LinkedList<String> camino = new LinkedList<>();
         while (nodo != null) {
@@ -87,7 +88,8 @@ public class Main {
         String[] p = e.split(",");
         for (int i = 0; i < 25; i++) {
             System.out.print(p[i] + "\t");
-            if ((i + 1) % 5 == 0) System.out.println();
+            if ((i + 1) % 5 == 0)
+                System.out.println();
         }
     }
 }
