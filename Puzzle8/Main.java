@@ -4,7 +4,6 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-
         String estadoInicial = "1238 4765";
         String estadoObjetivo = "1284376 5";
 

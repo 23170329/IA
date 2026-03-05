@@ -13,8 +13,10 @@ public class ArbolDeBusqueda {
 
         while (true) {
             Object resultado = search(raiz, objetivo, limite, usarManhattan);
-            if (resultado instanceof Nodo) return (Nodo) resultado;
-            if ((int) resultado == Integer.MAX_VALUE) return null;
+            if (resultado instanceof Nodo)
+                return (Nodo) resultado;
+            if ((int) resultado == Integer.MAX_VALUE)
+                return null;
             limite = (int) resultado;
         }
     }
@@ -24,18 +26,23 @@ public class ArbolDeBusqueda {
         actual.setCosto(h);
         int f = actual.getF();
 
-        if (f > limite) return f;
-        if (actual.getEstado().equals(objetivo)) return actual;
+        if (f > limite)
+            return f;
+        if (actual.getEstado().equals(objetivo))
+            return actual;
 
         int min = Integer.MAX_VALUE;
         nodosExpandidos++;
 
         for (Nodo hijo : actual.generarSucesores()) {
-            if (actual.getPadre() != null && hijo.getEstado().equals(actual.getPadre().getEstado())) continue;
+            if (actual.getPadre() != null && hijo.getEstado().equals(actual.getPadre().getEstado()))
+                continue;
 
             Object res = search(hijo, objetivo, limite, usarManhattan);
-            if (res instanceof Nodo) return res;
-            if ((int) res < min) min = (int) res;
+            if (res instanceof Nodo)
+                return res;
+            if ((int) res < min)
+                min = (int) res;
         }
         return min;
     }
@@ -44,5 +51,7 @@ public class ArbolDeBusqueda {
         return m ? Puzzle24.calcularManhattan(e, o) : Puzzle24.calcularFueraDeLugar(e, o);
     }
 
-    public int getNodosExpandidos() { return nodosExpandidos; }
+    public int getNodosExpandidos() {
+        return nodosExpandidos;
+    }
 }
