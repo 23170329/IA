@@ -1,7 +1,9 @@
 import cv2
 import os
 
-lista_personas = [d for d in os.listdir('dataset') if os.path.isdir(os.path.join('dataset', d))]
+data_path = os.path.join('Dataset', 'dataset')
+lista_personas = [d for d in os.listdir(data_path) if os.path.isdir(os.path.join(data_path, d))]
+
 face_recognizer = cv2.face.LBPHFaceRecognizer_create()
 face_recognizer.read(os.path.join('models', 'trained_model.xml'))
 
@@ -23,5 +25,6 @@ while True:
 
     cv2.imshow('Test', frame)
     if cv2.waitKey(1) & 0xFF == ord('q'): break
+
 cap.release()
 cv2.destroyAllWindows()

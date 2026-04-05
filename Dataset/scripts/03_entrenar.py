@@ -2,7 +2,7 @@ import cv2
 import os
 import numpy as np
 
-data_path = 'dataset'
+data_path = os.path.join('Dataset', 'dataset')
 model_path = os.path.join('models', 'trained_model.xml')
 os.makedirs('models', exist_ok=True)
 
