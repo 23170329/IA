@@ -1,7 +1,6 @@
 import cv2
 import os
 
-# Según tu terminal, tus fotos están en esta ruta exacta:
 dataset_dir = os.path.join('Dataset', 'dataset')
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
@@ -14,16 +13,13 @@ if not os.path.exists(dataset_dir):
 for subdir in os.listdir(dataset_dir):
     path_sujeto = os.path.join(dataset_dir, subdir)
 
-    if not os.path.isdir(path_sujeto) or "Alumno" in subdir:
+    if not os.path.isdir(path_sujeto):
         continue
 
     print(f"Procesando fotos de: {subdir}...")
 
-    # Listamos los archivos dentro de cada carpeta de famoso
     for file in os.listdir(path_sujeto):
         img_path = os.path.join(path_sujeto, file)
-
-        # Saltamos archivos que no sean imágenes comunes
         if not file.lower().endswith(('.png', '.jpg', '.jpeg')):
             continue
 
@@ -31,7 +27,6 @@ for subdir in os.listdir(dataset_dir):
         if img is None:
             continue
 
-        # Procesamiento
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         faces = face_cascade.detectMultiScale(gray, 1.1, 4)
 

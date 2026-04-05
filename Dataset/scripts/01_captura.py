@@ -1,7 +1,7 @@
 import cv2
 import os
 
-folder = os.path.join('dataset', 'Alumno_JeanSaavedra')
+folder = os.path.join('Dataset', 'dataset', 'Alumno_JeanSaavedra')
 os.makedirs(folder, exist_ok=True)
 
 cap = cv2.VideoCapture(0)
