@@ -15,7 +15,7 @@ print("Entrenando modelo...")
 for name_dir in lista_personas:
     person_path = os.path.join(data_path, name_dir)
     for file_name in os.listdir(person_path):
-        img = cv2.imread(os.path.join(person_path, file_name), 0) # LBPH usa gris
+        img = cv2.imread(os.path.join(person_path, file_name), 0)
         if img is not None:
             faces_data.append(img)
             labels.append(label)
