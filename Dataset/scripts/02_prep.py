@@ -5,21 +5,19 @@ import os
 dataset_dir = os.path.join('Dataset', 'dataset')
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
-print(f"🚀 Buscando fotos en: {os.path.abspath(dataset_dir)}")
+print(f"Buscando fotos en: {os.path.abspath(dataset_dir)}")
 
 if not os.path.exists(dataset_dir):
-    print(f"❌ Error: No se encuentra la ruta {dataset_dir}")
+    print(f"Error: No se encuentra la ruta {dataset_dir}")
     exit()
 
-# Listamos los sujetos (Famoso_1, Famoso_2, etc.)
 for subdir in os.listdir(dataset_dir):
     path_sujeto = os.path.join(dataset_dir, subdir)
 
-    # Solo entramos si es una carpeta y no es la tuya
     if not os.path.isdir(path_sujeto) or "Alumno" in subdir:
         continue
 
-    print(f"📂 Procesando fotos de: {subdir}...")
+    print(f"Procesando fotos de: {subdir}...")
 
     # Listamos los archivos dentro de cada carpeta de famoso
     for file in os.listdir(path_sujeto):
@@ -46,4 +44,4 @@ for subdir in os.listdir(dataset_dir):
         final_img = cv2.resize(roi, (160, 160))
         cv2.imwrite(img_path, final_img)
 
-print("\n✅ ¡Proceso terminado con éxito!")
+print("\n¡Proceso terminado con éxito!")
