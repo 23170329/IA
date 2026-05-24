@@ -2,9 +2,10 @@ import cv2
 import os
 import numpy as np
 
-data_path = os.path.join('Dataset', 'dataset')
-model_path = os.path.join('models', 'trained_model.xml')
-os.makedirs('models', exist_ok=True)
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+data_path = os.path.join(BASE_DIR, 'dataset')
+model_path = os.path.join(BASE_DIR, 'models', 'trained_model.xml')
+os.makedirs(os.path.join(BASE_DIR, 'models'), exist_ok=True)
 
 lista_personas = [d for d in os.listdir(data_path) if os.path.isdir(os.path.join(data_path, d))]
 labels, faces_data = [], []

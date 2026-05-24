@@ -1,11 +1,12 @@
 import cv2
 import os
 
-data_path = os.path.join('Dataset', 'dataset')
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+data_path = os.path.join(BASE_DIR, 'dataset')
 lista_personas = [d for d in os.listdir(data_path) if os.path.isdir(os.path.join(data_path, d))]
 
 face_recognizer = cv2.face.LBPHFaceRecognizer_create()
-face_recognizer.read(os.path.join('models', 'trained_model.xml'))
+face_recognizer.read(os.path.join(BASE_DIR, 'models', 'trained_model.xml'))
 
 cap = cv2.VideoCapture(0)
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')

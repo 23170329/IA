@@ -1,7 +1,8 @@
 import cv2
 import os
 
-dataset_dir = os.path.join('Dataset', 'dataset')
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+dataset_dir = os.path.join(BASE_DIR, 'dataset')
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
 print(f"Buscando fotos en: {os.path.abspath(dataset_dir)}")
