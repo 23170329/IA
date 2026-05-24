@@ -73,7 +73,6 @@ auth.json
 
 # --- DATASETS PESADOS (descargar por separado) ---
 5 - Notebooks/data/
-4 - Dataset Rostros y Proyecto CNN/dataset/
 
 # --- ESPECÍFICO PARA RECONOCIMIENTO FACIAL / DATASETS ---
 # Ignora fotos capturadas y modelos entrenados pesados
