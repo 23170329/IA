@@ -61,14 +61,19 @@ auth.json
 *.pfx
 *.crt
 
+# --- JUPYTER NOTEBOOKS ---
+**/.ipynb_checkpoints/
+
 # --- ARCHIVOS DE DATOS Y PESADOS (Previene el error de historial) ---
-*.csv
-*.json
 *.zip
 *.odt
 *.7z
 *.rar
 *.tar.gz
+
+# --- DATASETS PESADOS (descargar por separado) ---
+5 - Notebooks/data/
+4 - Dataset Rostros y Proyecto CNN/dataset/
 
 # --- ESPECÍFICO PARA RECONOCIMIENTO FACIAL / DATASETS ---
 # Ignora fotos capturadas y modelos entrenados pesados

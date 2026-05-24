@@ -1,0 +1,10 @@
+torch
+moviepy>=1.0.3
+transformers>=4.35.0
+gradio>=4.0.0
+opencv-python
+Pillow
+scipy
+numpy
+accelerate
+sentencepiece

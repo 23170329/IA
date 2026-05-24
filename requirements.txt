@@ -1,0 +1,24 @@
+# Core
+numpy
+pandas
+scikit-learn
+
+# Visualization
+matplotlib
+seaborn
+plotly
+
+# Notebook
+jupyter
+ipykernel
+
+# Computer Vision
+opencv-python
+opencv-contrib-python
+Pillow
+
+# Deep Learning
+tensorflow
+
+# Apps
+streamlit
