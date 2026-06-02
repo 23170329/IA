@@ -1,5 +1,6 @@
 import os
 import sys
+import math
 import tensorflow as tf
 from tensorflow.keras import layers, models
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
@@ -81,8 +82,8 @@ model.compile(
 
 model.summary()
 
-steps_per_epoch = max(1, train_gen.samples // BATCH_SIZE)
-validation_steps = max(1, val_gen.samples // BATCH_SIZE)
+steps_per_epoch = max(1, math.ceil(train_gen.samples / BATCH_SIZE))
+validation_steps = max(1, math.ceil(val_gen.samples / BATCH_SIZE))
 
 print("\n--- Fase 1: Entrenar cabeza (base congelada) ---")
 history = model.fit(
