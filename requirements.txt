@@ -22,3 +22,16 @@ tensorflow
 
 # Apps
 streamlit
+
+# Deep Learning adicional
+torch
+transformers>=4.35.0
+
+# Apps (adicionales)
+gradio>=4.0.0
+moviepy>=1.0.3
+
+# Utilidades
+scipy
+accelerate
+sentencepiece

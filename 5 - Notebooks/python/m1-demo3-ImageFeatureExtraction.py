@@ -4,38 +4,28 @@
 # # Extracting Features from Images
 # ##### Obtaining pixel intensities for image and transforming those into usable features
 
-# #### Installation of opencv may be required
-# 
-# OpenCV == Open Source Computer Vision Library
-
-# In[1]:
-
-get_ipython().system(u'pip install opencv-python')
-
-
-# In[2]:
-
 import cv2
+import os
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
 
+_data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data')
 
 # #### Load an image from which to extract RGB pixel intensities
 
 # In[3]:
 
 # Image with dimensions 173x130
-imagePath = '../data/dog.jpg'
+imagePath = os.path.join(_data_dir, 'dog.jpg')
 
 image = cv2.imread(imagePath)
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
 
 # #### View image using matplotlib
 
 # In[4]:
-
-get_ipython().magic(u'matplotlib inline')
-
-import matplotlib
-import matplotlib.pyplot as plt
 
 plt.imshow(image)
 

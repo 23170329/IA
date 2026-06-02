@@ -4,10 +4,18 @@
 # # Support Vector Regression
 # ##### Using SVR to predict the MPG of vehicles
 
-# In[2]:
-
 import pandas as pd
+import numpy as np
+import math
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from pandas import Series
+import pylab
+import os
 
+
+_data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data')
 
 # In[3]:
 
@@ -24,7 +32,7 @@ print(pd.__version__)
 
 # In[4]:
 
-auto_data = pd.read_csv('../data/auto-mpg.data', delim_whitespace = True, header=None,
+auto_data = pd.read_csv(os.path.join(_data_dir, 'auto-mpg.data'), sep=r'\s+', header=None,
                    names = ['mpg', 
                             'cylinders', 
                             'displacement', 
@@ -148,11 +156,10 @@ regression_model.score(X_train, Y_train)
 
 from pandas import Series
 import matplotlib.pyplot as plt
-get_ipython().magic(u'matplotlib inline')
-
 predictors = X_train.columns
 coef = Series(regression_model.coef_[0],predictors).sort_values()
 coef.plot(kind='bar', title='Modal Coefficients')
+plt.show()
 
 
 # #### Get predictions on test data
@@ -168,7 +175,6 @@ y_predict = regression_model.predict(x_test)
 
 # In[78]:
 
-get_ipython().magic(u'pylab inline')
 pylab.rcParams['figure.figsize'] = (15, 6)
 
 plt.plot(y_predict, label='Predicted')

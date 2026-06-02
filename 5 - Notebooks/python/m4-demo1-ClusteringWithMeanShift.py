@@ -7,7 +7,10 @@
 # In[3]:
 
 import pandas as pd
+import os
 
+
+_data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data')
 
 # ### Titanic data set
 # 
@@ -17,7 +20,7 @@ import pandas as pd
 
 # In[4]:
 
-titanic_data = pd.read_csv('../data/titanic.csv', quotechar='"')
+titanic_data = pd.read_csv(os.path.join(_data_dir, 'titanic.csv'), quotechar='"')
 titanic_data.head()
 
 
@@ -25,7 +28,7 @@ titanic_data.head()
 
 # In[5]:
 
-titanic_data.drop(['PassengerId', 'Name', 'Ticket', 'Cabin'], 'columns', inplace=True)
+titanic_data = titanic_data.drop(columns=['PassengerId', 'Name', 'Ticket', 'Cabin'])
 titanic_data.head()
 
 

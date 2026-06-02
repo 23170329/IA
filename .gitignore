@@ -72,7 +72,7 @@ auth.json
 *.tar.gz
 
 # --- DATASETS PESADOS (descargar por separado) ---
-5 - Notebooks/data/
+5 - Notebooks/data/mnist/
 
 # --- ESPECÍFICO PARA RECONOCIMIENTO FACIAL / DATASETS ---
 # Ignora fotos capturadas y modelos entrenados pesados
@@ -84,3 +84,5 @@ auth.json
 *.pkl
 *.xml
 !haarcascade_*.xml  # Permite los clasificadores base de OpenCV si los incluyes
+
+nul

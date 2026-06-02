@@ -7,7 +7,10 @@
 # In[1]:
 
 import pandas as pd
+import os
 
+
+_data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data')
 
 # ### MNIST data set: 
 # Text images of 28x28 pixels represented as flattened array of 784 pixels <br />
@@ -17,7 +20,7 @@ import pandas as pd
 
 # In[2]:
 
-mnist_data = pd.read_csv("../data/mnist/train.csv")
+mnist_data = pd.read_csv(os.path.join(_data_dir, "mnist", "train.csv"))
 mnist_data.tail()
 
 

@@ -8,6 +8,10 @@
 
 import pandas as pd
 import numpy as np
+import os
+
+
+_data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data')
 
 
 # ### Download the Wine data set
@@ -23,7 +27,7 @@ import numpy as np
 
 # In[3]:
 
-wine_data = pd.read_csv('../data/winequality-white.csv', 
+wine_data = pd.read_csv(os.path.join(_data_dir, 'winequality-white.csv'), 
                         names=['Fixed Acidity', 
                                'Volatile Acidity', 
                                'Citric Acid', 

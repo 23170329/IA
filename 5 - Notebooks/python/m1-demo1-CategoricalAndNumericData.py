@@ -7,7 +7,10 @@
 # In[1]:
 
 import pandas as pd
+import os
 
+
+_data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data')
 
 # In[2]:
 
@@ -19,7 +22,7 @@ print(pd.__version__)
 
 # In[4]:
 
-exam_data = pd.read_csv('../data/exams.csv', quotechar='"')
+exam_data = pd.read_csv(os.path.join(_data_dir, 'exams.csv'), quotechar='"')
 exam_data
 
 
