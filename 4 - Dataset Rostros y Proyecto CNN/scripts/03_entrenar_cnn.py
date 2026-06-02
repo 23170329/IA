@@ -16,12 +16,12 @@ EPOCHS_BASE = 15
 EPOCHS_FINETUNE = 10
 
 if not os.path.exists(SPLIT_DIR):
-    print("No se encuentra dataset_split/. Ejecutando 03_split_dataset.py...")
-    split_script = os.path.join(os.path.dirname(__file__), '03_split_dataset.py')
+    print("No se encuentra dataset_split/. Ejecutando 04_split_dataset.py...")
+    split_script = os.path.join(os.path.dirname(__file__), '04_split_dataset.py')
     if os.path.exists(split_script):
         os.system(f'"{sys.executable}" "{split_script}"')
     else:
-        print("Error: 03_split_dataset.py no encontrado.")
+        print("Error: 04_split_dataset.py no encontrado.")
         exit(1)
 
 train_dir = os.path.join(SPLIT_DIR, 'train')
