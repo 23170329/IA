@@ -3,4 +3,12 @@ __pycache__/
 *.pyo
 venv/
 .env
-nul
+*.mp4
+*.mov
+*.avi
+*.wmv
+*.h5
+*.pt
+*.pth
+*.keras
+*.pkl
